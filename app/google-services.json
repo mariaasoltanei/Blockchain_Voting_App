@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "564350960178",
+    "project_id": "blockchainvotingapp-352b8",
+    "storage_bucket": "blockchainvotingapp-352b8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:564350960178:android:e04a83c20e8646dfa0f22b",
+        "android_client_info": {
+          "package_name": "com.example.blockchain_voting_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCRlxgDeaxfFoBgrq-zW8A6d731hFflrY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
