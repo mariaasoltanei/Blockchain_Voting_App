@@ -1,12 +1,14 @@
 package com.example.blockchain_voting_app.models;
 
 public class User {
+    private String id;
     private String firstName;
     private String lastName;
     private String cnp;
     private String password;
 
-    public User(String firstName, String lastName, String cnp, String password) {
+    public User(String id, String firstName, String lastName, String cnp, String password) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.cnp = cnp;
@@ -43,5 +45,24 @@ public class User {
 
     public void setCnp(String cnp) {
         this.cnp = cnp;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", cnp='" + cnp + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }

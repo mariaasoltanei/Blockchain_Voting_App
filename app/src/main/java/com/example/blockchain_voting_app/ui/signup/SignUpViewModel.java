@@ -13,11 +13,8 @@ public class SignUpViewModel extends ViewModel {
         userRepository = new UserRepository();
     }
 
-    public LiveData<User> getUserByCNP(String cnp) {
-        return userRepository.getUserByCNP(cnp);
-    }
-
-    public void insertUser(User user) {
+    public User insertUser(User user) {
         userRepository.insertUser(user);
+        return user;
     }
 }
