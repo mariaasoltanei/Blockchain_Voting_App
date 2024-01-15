@@ -34,7 +34,7 @@ public class SharedPrefs {
     public static String getUserIdFromSharedPrefs(Context context){
         SharedPreferences sharedPref = context.getSharedPreferences("userDetails", Context.MODE_PRIVATE);
         String userId = sharedPref.getString("userId", null);
-        Log.d("userId", userId);
+       // Log.d("userId", userId);
         return userId;
     }
     public static User getUserFromSharedPrefs(Context context){

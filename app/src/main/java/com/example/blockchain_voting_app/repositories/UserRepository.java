@@ -34,7 +34,9 @@ public class UserRepository extends FirestoreDatabase {
                         Log.d("Firebase", "User added successfully!");
                         String userId = documentReference.getId();
                         user.setId(userId);
+                        Log.d("Firebase", user.toString());
                         SharedPrefs.addUserToSharedPrefs(user, BlockchainVotingApp.getAppContext());
+                        User utest = SharedPrefs.getUserFromSharedPrefs(BlockchainVotingApp.getAppContext());
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {

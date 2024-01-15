@@ -14,6 +14,7 @@ import com.example.blockchain_voting_app.MainActivity;
 import com.example.blockchain_voting_app.R;
 import com.example.blockchain_voting_app.models.User;
 import com.example.blockchain_voting_app.ui.login.LoginActivity;
+import com.example.blockchain_voting_app.utils.ApiClient;
 import com.example.blockchain_voting_app.utils.SharedPrefs;
 
 public class SignUpActivity extends AppCompatActivity {
@@ -32,6 +33,8 @@ public class SignUpActivity extends AppCompatActivity {
 
         signUpViewModel = new ViewModelProvider(this).get(SignUpViewModel.class);
         declareComponents();
+
+        //ApiClient.getVotingSessions();
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,6 +42,7 @@ public class SignUpActivity extends AppCompatActivity {
                 User insertedUser = signUpViewModel.insertUser(newUser);
                 Log.d("insertedUser", insertedUser.toString());
                 SharedPrefs.getUserIdFromSharedPrefs(getApplicationContext());
+                Log.d("insertedUser2", insertedUser.toString());
                 Intent mainIntent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(mainIntent);
                 finish();
