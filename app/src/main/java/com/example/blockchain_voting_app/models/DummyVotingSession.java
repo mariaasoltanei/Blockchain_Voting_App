@@ -1,14 +1,18 @@
 package com.example.blockchain_voting_app.models;
 
+import java.util.ArrayList;
+
 public class DummyVotingSession {
     private String name;
     private String description;
-    private int options;
+    private ArrayList<String> options;
+    private String imgSource;
 
-    public DummyVotingSession(String name, String description, int options) {
+    public DummyVotingSession(String name, String description, ArrayList<String> options, String imgSource) {
         this.name = name;
         this.description = description;
         this.options = options;
+        this.imgSource = imgSource;
     }
 
     public String getName() {
@@ -27,11 +31,11 @@ public class DummyVotingSession {
         this.description = description;
     }
 
-    public int getOptions() {
+    public ArrayList<String> getOptions() {
         return options;
     }
 
-    public void setOptions(int options) {
+    public void setOptions(ArrayList<String> options) {
         this.options = options;
     }
 }

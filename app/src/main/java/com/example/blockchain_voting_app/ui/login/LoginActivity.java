@@ -10,9 +10,9 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.blockchain_voting_app.MainActivity;
 import com.example.blockchain_voting_app.R;
 import com.example.blockchain_voting_app.models.User;
+import com.example.blockchain_voting_app.ui.recyclerview.VotingSessionActivity;
 import com.example.blockchain_voting_app.utils.SharedPrefs;
 
 
@@ -32,9 +32,9 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loginViewModel.findUserByID(etLoginCNP.getText().toString().trim(), etPassword.getText().toString().trim());
+                loginViewModel.findUserByCNP(etLoginCNP.getText().toString().trim(), etPassword.getText().toString().trim());
                 SharedPrefs.getUserIdFromSharedPrefs(getApplicationContext());
-                Intent mainIntent = new Intent(getApplicationContext(), MainActivity.class);
+                Intent mainIntent = new Intent(getApplicationContext(), VotingSessionActivity.class);
                 startActivity(mainIntent);
                 finish();
             }

@@ -12,7 +12,7 @@ public class LoginViewModel extends ViewModel {
         userRepository = new UserRepository();
     }
 
-    public void findUserByID(String cnp, String password) {
+    public void findUserByCNP(String cnp, String password) {
         userRepository.getUser(cnp, password);
     }
 

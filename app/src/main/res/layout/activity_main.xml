@@ -3,47 +3,51 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="wrap_content"
+    tools:context=".ui.recyclerview.VotingSessionActivity">
 
     <TextView
         android:id="@+id/tv_hello_user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hi, User"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:text="Hi, User"
+        android:textColor="@color/black"
         android:textSize="32dp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv_av_voting_sessions"/>
+
     <TextView
         android:id="@+id/tv_av_voting_sessions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Available voting sessions"
-        app:layout_constraintTop_toBottomOf="@+id/tv_hello_user"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:text="Available voting sessions"
         android:textColor="@color/black"
         android:textSize="24dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/rv_voting_sessions"/>
+        app:layout_constraintBottom_toTopOf="@+id/rv_voting_sessions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_hello_user" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_voting_sessions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/tv_av_voting_sessions"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:clipToPadding="false"
-        android:scrollbars="vertical"/>
+        android:scrollbars="horizontal"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_av_voting_sessions" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

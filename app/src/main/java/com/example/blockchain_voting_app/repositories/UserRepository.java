@@ -59,6 +59,7 @@ public class UserRepository extends FirestoreDatabase {
                             if(document.get("cnp").equals(cnp) && document.get("password").equals(password)){
                                 User user = new User(document.getId(), document.get("firstName").toString(), document.get("lastName").toString(), document.get("cnp").toString(), document.get("password").toString());
                                 SharedPrefs.addUserToSharedPrefs(user, BlockchainVotingApp.getAppContext());
+
                                 Log.d("Firebase", "User found: " + user.toString());
                             }
                             else {

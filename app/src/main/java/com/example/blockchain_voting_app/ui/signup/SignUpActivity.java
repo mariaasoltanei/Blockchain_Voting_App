@@ -2,7 +2,6 @@ package com.example.blockchain_voting_app.ui.signup;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,11 +9,10 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.blockchain_voting_app.MainActivity;
 import com.example.blockchain_voting_app.R;
 import com.example.blockchain_voting_app.models.User;
 import com.example.blockchain_voting_app.ui.login.LoginActivity;
-import com.example.blockchain_voting_app.utils.ApiClient;
+import com.example.blockchain_voting_app.ui.recyclerview.VotingSessionActivity;
 import com.example.blockchain_voting_app.utils.SharedPrefs;
 
 public class SignUpActivity extends AppCompatActivity {
@@ -40,10 +38,8 @@ public class SignUpActivity extends AppCompatActivity {
             public void onClick(View v) {
                 User newUser = createUser();
                 User insertedUser = signUpViewModel.insertUser(newUser);
-                Log.d("insertedUser", insertedUser.toString());
                 SharedPrefs.getUserIdFromSharedPrefs(getApplicationContext());
-                Log.d("insertedUser2", insertedUser.toString());
-                Intent mainIntent = new Intent(getApplicationContext(), MainActivity.class);
+                Intent mainIntent = new Intent(getApplicationContext(), VotingSessionActivity.class);
                 startActivity(mainIntent);
                 finish();
                 //TODO:handle case where the user is not created successfully

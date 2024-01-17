@@ -20,7 +20,7 @@ public class VotingSessionViewModel extends ViewModel {
     public MutableLiveData<List<DummyVotingSession>> getVotingSessions() {
         if (votingSessionsMLD == null) {
             votingSessionsMLD = new MutableLiveData<>();
-            loadVotingSessions(); // You can perform the initial data loading here
+            loadVotingSessions();
         }
         return votingSessionsMLD;
     }

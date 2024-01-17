@@ -18,8 +18,8 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class VotingSessionRepository {
-    private final String API_KEY = "fc1f8e3ce67ae24e8a1b5afa0a02d6fd";
-    private final String bearerToken = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmYzFmOGUzY2U2N2FlMjRlOGExYjVhZmEwYTAyZDZmZCIsInN1YiI6IjYwZjU5Njc1ZjkwYjE5MDA3NDZjZDc3ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.OhbdVV4drRNr4AWPC0UlG0hxAM6sJvSD77JBGevA4I8";
+    private final String API_KEY = "123";
+    private final String bearerToken = "bearerToken";
     private final String testUrl1 = "https://api.themoviedb.org/3/movie/now_playing";
     private final String getTestUrl2 = "https://api.themoviedb.org/3/movie/"; //add movie id
     private final OkHttpClient client = new OkHttpClient();
@@ -40,7 +40,7 @@ public class VotingSessionRepository {
                 String title = movie.getString("title");
                 String description = movie.getString("overview");
                 double rating = movie.getDouble("vote_average");
-                votingSessions.add(new DummyVotingSession(title, description, (int) rating));
+                //votingSessions.add(new DummyVotingSession(title, description, (int) rating));
                 //DummyVotingSession session1 = new DummyVotingSession(title, description, (int) rating)
                 Log.d("APIRESPONSE", String.valueOf(responseBody));
             }

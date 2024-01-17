@@ -6,6 +6,7 @@ public class User {
     private String lastName;
     private String cnp;
     private String password;
+    private boolean hasVoted;
 
     public User(String id, String firstName, String lastName, String cnp, String password) {
         this.id = id;
@@ -13,6 +14,7 @@ public class User {
         this.lastName = lastName;
         this.cnp = cnp;
         this.password = password;
+        //this.hasVoted = false;
     }
 
     public String getFirstName() {
@@ -55,6 +57,14 @@ public class User {
         this.id = id;
     }
 
+    public boolean isHasVoted() {
+        return hasVoted;
+    }
+
+    public void setHasVoted(boolean hasVoted) {
+        this.hasVoted = hasVoted;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -65,4 +75,6 @@ public class User {
                 ", password='" + password + '\'' +
                 '}';
     }
+
+
 }
